@@ -1,0 +1,26 @@
+<% include ../shared/header.ejs %>
+
+<h1>Grocery List</h1>
+
+<form method="post">
+        <fieldset class="form-group">
+            <label class="control-label col-md-2" for="colour">Colour: *</label>
+            <input name="colour" id="colour" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <label class="control-label col-md-2" for="category">Category: *</label>
+            <input name="category" id="category" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <label class="control-label col-md-2" for="price">Price: *</label>
+            <input name="price" id="price" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <label class="control-label col-md-2" for="calories">Calories: *</label>
+            <input name="calories" id="calories" required />
+        </fieldset>
+        <button class="offset-2 btn btn-primary">Save</button>
+    </form>
+    
+    <% include ../shared/footer.ejs %>
+    
