@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { 
     title: 'Grocery List Manager',
     message: 'the grocery list manager'
@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET groceries page. */
-router.get('/groceries', function(req, res, next) {
+router.get('/groceries', (req, res, next) => {
   res.render('groceries', { 
     title: 'Grocery List',
     message: 'the list of available groceries'
@@ -18,10 +18,18 @@ router.get('/groceries', function(req, res, next) {
 });
 
 /* GET manager page. */
-router.get('/manager', function(req, res, next) {
+router.get('/manager', (req, res, next) => {
   res.render('manager', { 
     title: 'Grocery Manager',
     message: 'the Grocery Manager'
+   });
+});
+
+/* GET about page. */
+router.get('/about', (req, res, next) => {
+  res.render('about', { 
+    title: 'About Page',
+    message: 'the about page'
    });
 });
 
@@ -40,5 +48,23 @@ router.get('/login', (req, res, next) => {
       user: req.user
   });
 });
+
+// GET: /google
+// router.get('/google', passport.authenticate('google', {
+//   scope: ['profile', 'email']
+// }));
+
+// GET: /google/callback
+// router.get('/google/callback', passport.authenticate('google', {
+  // failed google auth
+//   failureRedirect: '/login',
+//   failureMessage: 'Invalid Login',
+//   scope: 'email'
+// }),
+  // successful google auth
+//   (req, res, next) => {
+//      res.redirect('/cars');
+//   }
+// );
 
 module.exports = router;
