@@ -24,14 +24,17 @@
             <li class="nav-item"><a class="nav-link" href="/manager">Manager</a></li>
             <li class="nav-item"><a class="nav-link" href="/groceries">Groceries</a></li>
         </ul>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-        </ul>
-        <!-- <div class="justify-content-end">
-            <a class="nav-link" href="/register">Register</a>
-            <a class="nav-link" href="/login">Login</a>
-        </div> -->
-    </div>
-</nav>
+        <ul class="navbar-nav">
+                <% if (user == undefined) { %>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <% }
+                else { %>
+                    <li class="nav item nav-link"><%= user.username %></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+        
+        <main class="container-fluid" role="main">
 

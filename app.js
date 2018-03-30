@@ -10,29 +10,19 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config/globals');
 
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-// const groceries = require('./routes/groceries');
-
-
-
-
-// references we added
-// const mongoose = require('mongoose');
-// const config = require('./config/globals');
-
 // auth packages
 // const passport = require('passport');
 // const session = require('express-session');
 // const localStrategy = require('passport-local').Strategy;
 // const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-// var index = require('./routes/index');
-// const grocery = require('./routes/grocery');
+var index = require('./routes/index');
+var users = require('./routes/users');
+const groceries = require('./routes/groceries');
+
+
 
 var app = express();
-
 
 
 
@@ -50,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-// app.use('/groceries', groceries);
+app.use('/groceries', groceries);
 
 // db connection
 mongoose.connect(config.db);
