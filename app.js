@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+// references we added
+const mongoose = require('mongoose');
+const config = require('./config/globals');
+
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 // const groceries = require('./routes/groceries');
@@ -13,8 +19,8 @@ var users = require('./routes/users');
 
 
 // references we added
-const mongoose = require('mongoose');
-const config = require('./config/globals');
+// const mongoose = require('mongoose');
+// const config = require('./config/globals');
 
 // auth packages
 // const passport = require('passport');
@@ -68,3 +74,10 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+
+
+
+
+

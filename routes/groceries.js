@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
             console.log(err);
         }
         else {
-            res.render('grocery/index', {
+            res.render('groceries/index', {
                 title: 'Grocery List',
                 grocery: grocery,
                 user: req.user
@@ -23,17 +23,17 @@ router.get('/', (req, res, next) => {
     });
 });
 
-// GET: /grocery/add
+// GET: /groceries/add
 router.get('/add', functions.isLoggedIn, (req, res, next) => {
-    res.render('grocery/add', {
+    res.render('groceries/add', {
         title: 'Add a New Food Item',
         user: req.user
     });
 });
 
-// POST: /grocery/add
+// POST: /groceries/add
 router.post('/add', functions.isLoggedIn, (req, res, next) => {
-    // use the grocery route to save the new food item
+    // use the groceries route to save the new food item
     Grocery.create({
         colour: req.body.colour,
         category: req.body.category,
@@ -44,12 +44,12 @@ router.post('/add', functions.isLoggedIn, (req, res, next) => {
             console.log(err);
         }
         else {
-            res.redirect('/grocery');
+            res.redirect('/groceries');
         }
     }) ;
 });
 
-// GET: /grocery/delete/abc123
+// GET: /groceries/delete/abc123
 router.get('/delete/:_id', functions.isLoggedIn, (req, res, next) => {
     // get the _id parameter from the url and store in a local variable
     let _id = req.params._id;
@@ -60,7 +60,7 @@ router.get('/delete/:_id', functions.isLoggedIn, (req, res, next) => {
             console.log(err);
         }
         else {
-            res.redirect('/grocery');
+            res.redirect('/groceries');
         }
     });
 });
@@ -76,7 +76,7 @@ router.get('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
             console.log(err);
         }
         else {
-            res.render('grocery/edit', {
+            res.render('groceries/edit', {
                 title: 'Grocery Details',
                 grocery: grocery,
                 user: req.user
@@ -102,7 +102,7 @@ router.post('/edit/:_id', functions.isLoggedIn, (req, res, next) => {
                 console.log(err);
             }
             else {
-                res.redirect('/grocery');
+                res.redirect('/groceries');
             }
         });
 });
