@@ -85,11 +85,11 @@ router.get('/login', (req, res, next) => {
 });
 
 // POST: /login
-// router.post('/login', passport.authenticate('local', {
-// successRedirect: '/groceries',
-//   failureRedirect: '/login',
-//   failureMessage: 'Invalid Login'
-// }));
+router.post('/login', passport.authenticate('local', {
+successRedirect: '/groceries',
+  failureRedirect: '/login',
+  failureMessage: 'Invalid Login'
+}));
 
 // GET: /logout
 router.get('/logout', (req, res, next) => {
