@@ -15,3 +15,14 @@ a {
   background: rgb(255, 255, 255);
   border: 1px solid lightgrey;
 }
+/* Added a background image to the jumbotron */
+.jumbotron {
+  background-image: url('../images/dairy-l.jpg');
+  background-size: cover;
+  color: white;
+}
+.jumbotronContainer {
+  border: none;
+  border-radius: 10px;
+  background: rgba(1, 91, 220, 0.9);
+}
