@@ -8,13 +8,12 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
 
 
 
 // references we added
-// const mongoose = require('mongoose');
-// const config = require('./config/globals');
+const mongoose = require('mongoose');
+const config = require('./config/globals');
 
 // auth packages
 // const passport = require('passport');
@@ -25,7 +24,7 @@ var app = express();
 // var index = require('./routes/index');
 // const grocrey = require('./routes/grocery');
 
-// var app = express();
+var app = express();
 
 
 
