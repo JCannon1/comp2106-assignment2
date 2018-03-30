@@ -19,7 +19,7 @@ const config = require('./config/globals');
 var index = require('./routes/index');
 var users = require('./routes/users');
 const groceries = require('./routes/groceries');
-
+const ejsLint = require('ejs-lint');
 
 
 var app = express();
