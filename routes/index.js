@@ -10,20 +10,20 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET groceries page. */
-router.get('/groceries', (req, res, next) => {
-  res.render('groceries', { 
-    title: 'Grocery List',
-    message: 'the list of available groceries'
-   });
-});
+// router.get('/grocery', (req, res, next) => {
+//   res.render('grocery', { 
+//     title: 'Grocery List',
+//     message: 'the list of available groceries'
+//    });
+// });
 
 /* GET manager page. */
-router.get('/manager', (req, res, next) => {
-  res.render('manager', { 
-    title: 'Grocery Manager',
-    message: 'the Grocery Manager'
-   });
-});
+// router.get('/manager', (req, res, next) => {
+//   res.render('manager', { 
+//     title: 'Grocery Manager',
+//     message: 'the Grocery Manager'
+//    });
+// });
 
 /* GET about page. */
 router.get('/about', (req, res, next) => {

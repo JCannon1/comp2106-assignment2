@@ -3,7 +3,7 @@
 <h1>Grocery List Manager</h1>
 
 <% if (user) %>
-<a href="/groceries/add">Add a New Food Item</a>
+<a href="/grocery/add">Add a New Food Item</a>
 <% } %>
 
 <table class="table table-striped table-hover">
@@ -11,22 +11,27 @@
         <th>Colour</th>
         <th>Category</th>
         <th>Price</th>
-        <th>Calories</th>
+        <% if (user) { %>
+            <th>Calories</th>
+        <% } %>
     </tr>
-    <% for(let i = 0; i < groceries.length; i++) { %>
+    <% for(let i = 0; i < grocery.length; i++) { %>
         <tr>
-            <td><%= groceries[i].colour %></td>
-            <td><%= groceries[i].category %></td>
-            <td><%= groceries[i].price %></td>
-            <td><%= groceries[i].calories %></td>
+            <td><%= grocery[i].colour %></td>
+            <td><%= grocery[i].category %></td>
+            <td><%= grocery[i].price %></td>
+            <td><%= grocery[i].calories %></td>
             <% if (user) { %>
             <td>
-                <a class="btn btn-info" href="/groceries/edit<%= groceries[i]._id %>">Edit</a>
-                <a class="btn btn-danger" href="/groceries/delete/<%= groceries[i]._id %>" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+                <a class="btn btn-info" href="/grocery/edit<%= grocery[i]._id %>">Edit</a>
+                <a class="btn btn-danger" href="/grocery/delete/<%= grocery[i]._id %>" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
             </td>
             <% } %>
         </tr>
     <% } %>
 </table>
 
-<% include ../shared/footer %>
+<% include ../shared/footer %> 
+
+
+

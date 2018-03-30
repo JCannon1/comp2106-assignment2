@@ -1,15 +1,15 @@
 // references
 const express = require('express');
 const router = express.Router();
-const Make = require('../routes/grocery');
+const Grocery = require('../models/grocery');
 
 // access auth check method in our new global functions file
 const functions = require('../config/functions');
 
 // GET: /grocery
 router.get('/', (req, res, next) => {
-    // get make documents from db
-    Make.find((err, grocery) => {
+    // get grocery documents from db
+    Grocery.find((err, grocery) => {
         if (err) {
             console.log(err);
         }

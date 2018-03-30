@@ -10,6 +10,26 @@ var users = require('./routes/users');
 
 var app = express();
 
+
+
+// references we added
+// const mongoose = require('mongoose');
+// const config = require('./config/globals');
+
+// auth packages
+// const passport = require('passport');
+// const session = require('express-session');
+// const localStrategy = require('passport-local').Strategy;
+// const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+// var index = require('./routes/index');
+// const grocrey = require('./routes/grocery');
+
+// var app = express();
+
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
