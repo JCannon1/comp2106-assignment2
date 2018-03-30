@@ -105,21 +105,21 @@ router.get('/logout', (req, res, next) => {
 });
 
 // GET: /google
-// router.get('/google', passport.authenticate('google', {
-//   scope: ['profile', 'email']
-// }));
+router.get('/google', passport.authenticate('google', {
+  scope: ['profile', 'email']
+}));
 
 // GET: /google/callback
-// router.get('/google/callback', passport.authenticate('google', {
+router.get('/google/callback', passport.authenticate('google', {
   // failed google auth
-//   failureRedirect: '/login',
-//   failureMessage: 'Invalid Login',
-//   scope: 'email'
-// }),
+  failureRedirect: '/login',
+  failureMessage: 'Invalid Login',
+  scope: 'email'
+}),
   // successful google auth
-//   (req, res, next) => {
-//      res.redirect('/groceries');
-//   }
-// );
+  (req, res, next) => {
+     res.redirect('/groceries');
+  }
+);
 
 module.exports = router;
