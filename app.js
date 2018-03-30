@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// const groceries = require('./routes/groceries');
 
 
 
@@ -22,7 +23,7 @@ const config = require('./config/globals');
 // const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 // var index = require('./routes/index');
-// const grocrey = require('./routes/grocery');
+// const grocery = require('./routes/grocery');
 
 var app = express();
 
@@ -43,6 +44,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+// app.use('/groceries', groceries);
+
+// db connection
+mongoose.connect(config.db);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

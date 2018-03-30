@@ -6,7 +6,7 @@ const Grocery = require('../models/grocery');
 // access auth check method in our new global functions file
 const functions = require('../config/functions');
 
-// GET: /grocery
+// GET: /groceries
 router.get('/', (req, res, next) => {
     // get grocery documents from db
     Grocery.find((err, grocery) => {
