@@ -10,13 +10,13 @@ const mongoose = require('mongoose');
 const config = require('./config/globals');
 
 // auth packages
-// const passport = require('passport');
-// const session = require('express-session');
-// const localStrategy = require('passport-local').Strategy;
+const passport = require('passport');
+const session = require('express-session');
+const localStrategy = require('passport-local').Strategy;
 // const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 const groceries = require('./routes/groceries');
 const ejsLint = require('ejs-lint');
 
@@ -38,19 +38,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 mongoose.connect(config.db);
 
 // passport configuration
-// app.use(session({
-//   secret: 'any string for salting here',
-//   resave: true,
-//   saveUninitialized: false
-// }));
+app.use(session({
+  secret: 'any string for salting here',
+  resave: true,
+  saveUninitialized: false
+}));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // reference User model
-// const User = require('./models/user');
+const User = require('./models/user');
 
-// passport.use(User.createStrategy());
+passport.use(User.createStrategy());
 
 // google auth strategy
 // passport.use(new googleStrategy({
@@ -70,8 +70,8 @@ mongoose.connect(config.db);
 // ));
 
 // session management for users
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', index);
 // app.use('/users', users);

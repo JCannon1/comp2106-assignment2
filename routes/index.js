@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 // auth references
-// const passport = require('passport');
-// const User = require('../models/user');
+const passport = require('passport');
+const User = require('../models/user');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -60,10 +60,10 @@ router.post('/register', (req, res, next) => {
         console.log(err);
       }
       else {
-        // automatically log the user in and direct to /cars
-          /*req.login(user,  (err) => {
-            res.redirect('/cars')
-          })*/
+        // automatically log the user in and direct to /groceries
+          req.login(user,  (err) => {
+            res.redirect('/groceries')
+          })
           res.redirect('/login');
       }
     });
