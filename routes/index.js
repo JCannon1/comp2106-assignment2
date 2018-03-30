@@ -32,6 +32,15 @@ router.get('/about', (req, res, next) => {
    });
 });
 
+/* GET contact page. */
+router.get('/contact', (req, res, next) => {
+  res.render('contact', { 
+    title: 'Contact Page',
+    message: 'the contact page',
+    user: req.user
+   });
+});
+
 // GET: /register
 router.get('/register', (req, res, next) => {
   res.render('register', {

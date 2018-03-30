@@ -74,7 +74,7 @@ mongoose.connect(config.db);
 // passport.deserializeUser(User.deserializeUser());
 
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
 app.use('/groceries', groceries);
 
 // catch 404 and forward to error handler

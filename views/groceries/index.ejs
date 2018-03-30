@@ -2,7 +2,7 @@
 
 <h1>Grocery List Manager</h1>
 
-<% if (user) %>
+<% if (user) { %>
 <a href="/groceries/add">Add a New Food Item</a>
 <% } %>
 
@@ -15,7 +15,7 @@
             <th>Calories</th>
         <% } %>
     </tr>
-    <% for(let i = 0; i < groceries.length; i++) { %>
+    <% for(let i = 0; i < grocery.length; i++) { %>
         <tr>
             <td><%= groceries[i].colour %></td>
             <td><%= groceries[i].category %></td>
