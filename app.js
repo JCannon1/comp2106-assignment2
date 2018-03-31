@@ -18,7 +18,7 @@ const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var index = require('./routes/index');
 // var users = require('./routes/users');
 const groceries = require('./routes/groceries');
-const ejsLint = require('ejs-lint');
+// const ejsLint = require('ejs-lint');
 
 var app = express();
 
